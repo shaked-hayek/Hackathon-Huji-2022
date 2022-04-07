@@ -34,3 +34,20 @@ class User:
             print(conf.E_CATEGORY_EXISTS)
             return
         self.activity_by_category[name] = []
+
+    def delete_activity(self, category, name):
+        if category not in self.activity_by_category:
+            print(conf.E_CATEGORY_DOESNT_EXISTS)
+            return False
+        if name not in self.activity_by_category[category]:
+            print(conf.E_ACTIVITY_DOESNT_EXISTS)
+            return False
+        self.activity_by_category[category].remove(name)
+        return True
+
+    def delete_category(self, name):
+        if name not in self.activity_by_category:
+            print(conf.E_CATEGORY_DOESNT_EXISTS)
+            return False
+        self.activity_by_category.pop(name)
+        return True

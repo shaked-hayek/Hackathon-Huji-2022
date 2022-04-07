@@ -36,4 +36,5 @@ USERS_FILE_COL = [
 # Error messages
 E_ACTIVITY_EXISTS = "ERROR: Activity already exist"
 E_CATEGORY_EXISTS = "ERROR: Category already exist"
+E_ACTIVITY_DOESNT_EXISTS = "ERROR: Activity doesn't exist"
 E_CATEGORY_DOESNT_EXISTS = "ERROR: Category doesn't exist"

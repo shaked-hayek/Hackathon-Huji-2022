@@ -1,3 +1,4 @@
+import uuid
 import configuration as conf
 import csv
 
@@ -10,8 +11,14 @@ class User:
         self.file_name = conf.DATA_FILE.format(self.user_id)
         self.create_data_file()
 
-    def generate_user_id(self):
-        return 1
+    @staticmethod
+    def generate_user_id():
+        return uuid.uuid4()
+
+    def add_user(self):
+        with open(conf.USERS_FILE, 'w', newline='') as csvfile:
+            data_writer = csv.writer(csvfile)
+            data_writer.writerow([self.user_id, self.user_name, self.password])
 
     def create_data_file(self):
         with open(self.file_name, 'w', newline='') as csvfile:

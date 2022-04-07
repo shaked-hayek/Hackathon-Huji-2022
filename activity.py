@@ -37,6 +37,14 @@ class Activity:
             data_writer.writerow([
                 self.start_time.timestamp(),
                 self.end_time.timestamp(),
+                self.start_time.year,   # s_year
+                self.end_time.year,     # e_year
+                self.start_time.month,  # s_month
+                self.end_time.month,    # e_month
+                self.start_time.day,    # s_day
+                self.end_time.day,      # e_day
+                datetime.strftime(self.start_time, "%H:%M:%S"),  # s_hour
+                datetime.strftime(self.end_time, "%H:%M:%S"),    # e_hour
                 self.category,
                 self.name,
                 self.paused_total,

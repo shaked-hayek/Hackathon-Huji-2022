@@ -14,7 +14,7 @@ def create_users_file():
         data_writer.writerow(conf.USERS_FILE_COL)
 
 
-def mock_run():
+def mock_run_2():
     users = Users()
     users.import_users(conf.USERS_FILE)
     user = users.user_login("Shaked", "123456")
@@ -28,7 +28,7 @@ def mock_run():
     running.end_activity()
 
 
-def mock_run_new():
+def mock_run_1():
     create_users_file()
     users = Users()
     user = users.add_new_user("Shaked", "123456")
@@ -44,5 +44,5 @@ def mock_run_new():
 
 
 if __name__ == "__main__":
-    mock_run_new()
-    mock_run()
+    mock_run_1()
+    mock_run_2()

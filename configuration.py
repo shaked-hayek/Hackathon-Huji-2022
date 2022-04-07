@@ -1,5 +1,4 @@
 
-
 DATA_FILE = "{user_id}_data.csv"
 COL_START = "start"
 COL_END = "end"
@@ -33,3 +32,8 @@ USERS_FILE_COL = [
     U_COL_NAME,
     U_COL_PASS,
 ]
+
+# Error messages
+E_ACTIVITY_EXISTS = "ERROR: Activity already exist"
+E_CATEGORY_EXISTS = "ERROR: Category already exist"
+E_CATEGORY_DOESNT_EXISTS = "ERROR: Category doesn't exist"

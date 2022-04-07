@@ -21,6 +21,7 @@ def mock_run():
     if not user:
         user = users.add_new_user("Shaked", "123456")
         print("created user")
+    user.create_category("Sport")
     running = user.create_activity("Sport", "Yoga")
     running.start_activity()
     time.sleep(5)
@@ -31,6 +32,7 @@ def mock_run_new():
     create_users_file()
     users = Users()
     user = users.add_new_user("Shaked", "123456")
+    user.create_category("Sport")
     running = user.create_activity("Sport", "Run")
     running.start_activity()
     time.sleep(5)
@@ -43,5 +45,4 @@ def mock_run_new():
 
 if __name__ == "__main__":
     mock_run_new()
-    print("@@")
     mock_run()

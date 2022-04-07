@@ -9,6 +9,7 @@ class User:
         self.user_name = user_name
         self.password = password
         self.user_id = user_id
+        self.activity_by_category = {}
 
     def create_data_file(self):
         file_name = conf.DATA_FILE.format(user_id=self.user_id)
@@ -19,4 +20,17 @@ class User:
             data_writer.writerow(conf.DATA_FILE_COL)
 
     def create_activity(self, category, name):
+        if category not in self.activity_by_category:
+            print(conf.E_CATEGORY_DOESNT_EXISTS)
+            return
+        if name in self.activity_by_category[category]:
+            print(conf.E_ACTIVITY_EXISTS)
+            return
+        self.activity_by_category[category].append(name)
         return Activity(self.user_id, category, name)
+
+    def create_category(self, name):
+        if name in self.activity_by_category:
+            print(conf.E_CATEGORY_EXISTS)
+            return
+        self.activity_by_category[name] = []
